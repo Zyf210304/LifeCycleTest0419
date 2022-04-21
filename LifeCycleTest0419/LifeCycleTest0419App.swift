@@ -19,12 +19,15 @@ struct LifeCycleTest0419App: App {
                 
                 IntroductionView().environmentObject(vm)
                     .transition(AnyTransition.scale.animation(.easeIn(duration: 0.2)))
+                    
+                
             } else {
                 
                 if vm.isLogin {
                     
                     ContentView().environmentObject(vm)
                         .transition(AnyTransition.scale.animation(.easeInOut(duration: 0.2)))
+                    
                 } else {
                  
                     LoginView().environmentObject(vm)

@@ -13,14 +13,32 @@ struct LoginView: View {
     
     var body: some View {
         
-        VStack {
+        NavigationView {
             
-            Text("登录页")
-            Button("登陆") {
+            VStack(spacing: 20) {
                 
-                vm.isLogin = true
+                Text("登录页")
+                
+                Button("登陆 改变isLogin") {
+                    
+                    vm.isLogin = true
+                }
+                
+                NavigationLink {
+                    
+                    ContentView()
+                    
+                } label: {
+                    
+                    Text("登陆 跳转")
+                }
+
+                
             }
         }
+        .navigationTitle("登录页")
+        
+        
         
     }
 }
