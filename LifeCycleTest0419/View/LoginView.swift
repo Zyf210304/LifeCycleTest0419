@@ -11,6 +11,8 @@ struct LoginView: View {
     
     @EnvironmentObject var vm: PageViewModel
     
+    @State var  text: String = "测试文本"
+    
     var body: some View {
         
         NavigationView {
@@ -24,13 +26,24 @@ struct LoginView: View {
                     vm.isLogin = true
                 }
                 
-                NavigationLink {
+//                NavigationLink {
+//                    
+//                    ContentView()
+//                    
+//                } label: {
+//                    
+//                    Text("登陆 跳转")
+//                }
+
+                
+                Button {
                     
-                    ContentView()
+                    text = "文本改变"
                     
                 } label: {
                     
-                    Text("登陆 跳转")
+                    Text(text)
+//                        .foregroundColor(.primary)
                 }
 
                 

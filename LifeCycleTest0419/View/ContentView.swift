@@ -12,30 +12,68 @@ struct ContentView: View {
     @EnvironmentObject var vm: PageViewModel
     
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
+    
+    @State var gotoView4: Bool = false
     
     var body: some View {
         
-        ZStack {
+        NavigationView {
             
-            Color.orange.edgesIgnoringSafeArea(.all)
-            VStack(spacing: 20) {
+            ZStack {
                 
-                Text("首页")
-                
-                Button("退出登陆 改变isLogin") {
+                Color.orange.edgesIgnoringSafeArea(.all)
+                VStack(spacing: 20) {
                     
-                    vm.isLogin = false
-                }
-                
-                Button("退出登陆 Dismiss") {
+                    Text("首页")
                     
-                    self.presentationMode.wrappedValue.dismiss()
+                    Button("退出登陆 改变isLogin") {
+                        
+                        vm.isLogin = false
+                    }
+                    
+                    Button("退出登陆 Dismiss") {
+                        
+                        dismiss()
+                    }
+                    
+                    NavigationLink {
+                        
+                        View1()
+                        
+                    } label: {
+                        
+                        Text("跳转到view1 单向普通跳转")
+                    }
+                    
+                    //通过bool值改变调整转
+                    HStack(spacing: 0) {
+                        
+                        NavigationLink("", isActive: $gotoView4) {
+                            
+                            View4(returnContentViewBool: $gotoView4)
+                        }
+                        .background {
+                            Color.black
+                        }
+                        
+                        Button {
+                            
+                            gotoView4.toggle()
+                            
+                        } label: {
+                            
+                            Text("通过bool值跳转,多层跳转返回首页")
+                        }
+                    }
+                   
+
+                    
                 }
-                
-                
-                
             }
         }
+        
+        
     }
 }
 
