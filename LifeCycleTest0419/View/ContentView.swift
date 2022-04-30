@@ -16,6 +16,9 @@ struct ContentView: View {
     
     @State var gotoView4: Bool = false
     
+    
+    @State private var showingSheet = false
+    
     var body: some View {
         
         NavigationView {
@@ -37,6 +40,9 @@ struct ContentView: View {
                         dismiss()
                     }
                     
+                   
+
+                    
                     NavigationLink {
                         
                         View1()
@@ -48,6 +54,8 @@ struct ContentView: View {
                     
                     //通过bool值改变调整转
                     HStack(spacing: 0) {
+                        
+                      
                         
                         NavigationLink("", isActive: $gotoView4) {
                             
@@ -67,9 +75,18 @@ struct ContentView: View {
                         }
                     }
                    
-
+                   
+                    Button("Show Sheet") {
+                                self.showingSheet.toggle()
+                    }
+                    .sheet(isPresented: $showingSheet) {
+                        View7()
+                    }
+                    
+                    
                     
                 }
+                
             }
         }
         

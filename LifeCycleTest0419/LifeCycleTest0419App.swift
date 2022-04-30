@@ -12,7 +12,9 @@ struct LifeCycleTest0419App: App {
     
     @StateObject var vm = PageViewModel()
     
+    
     var body: some Scene {
+        
         WindowGroup {
            
             if vm.App_first {
@@ -33,6 +35,8 @@ struct LifeCycleTest0419App: App {
                     LoginView().environmentObject(vm)
                         .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.2)))
                 }
+                
+                
             }
         }
     }

@@ -10,6 +10,7 @@ import SwiftUI
 struct View2: View {
     
     @State var  gotoView3: Bool = false
+    
     @State var navigationTag: String?
     @State var navigationTagView1: String?
     
@@ -27,6 +28,7 @@ struct View2: View {
                     .foregroundColor(.white)
                 
                 
+                
                 ///tag  跳转
                 NavigationLink(tag: "View3", selection: $navigationTag) {
                     
@@ -35,6 +37,8 @@ struct View2: View {
                 } label: {
                     
                 }.labelsHidden()
+                
+                
 
                 NavigationLink(tag: "View1", selection: $navigationTagView1) {
                     

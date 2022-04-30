@@ -9,7 +9,9 @@ import SwiftUI
 
 struct View3: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
+    
     @Binding var view3Text:String
     
     var body: some View {
@@ -30,7 +32,8 @@ struct View3: View {
             
             Button {
                 
-                dismiss()
+                presentationMode.wrappedValue.dismiss()
+//                dismiss()
                 
             } label: {
                 

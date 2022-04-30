@@ -71,9 +71,9 @@
 		02E762C3280E8BCC00B82CC6 /* LifeCycleTest0419 */ = {
 			isa = PBXGroup;
 			children = (
+				02E762C4280E8BCC00B82CC6 /* LifeCycleTest0419App.swift */,
 				02E762D3280E8BE200B82CC6 /* View Model */,
 				02E762D2280E8BDB00B82CC6 /* View */,
-				02E762C4280E8BCC00B82CC6 /* LifeCycleTest0419App.swift */,
 				02E762C8280E8BCE00B82CC6 /* Assets.xcassets */,
 				02E762CA280E8BCE00B82CC6 /* Preview Content */,
 			);
