@@ -9,7 +9,8 @@ import SwiftUI
 
 class PageViewModel: ObservableObject {
    
-    @Published var isLogin: Bool = false
+    @Published var need_authenticate: Bool = true
+    @AppStorage("APP_Login") var isLogin: Bool = false
     @AppStorage("APP_FIRST") var App_first: Bool = true
 }
 

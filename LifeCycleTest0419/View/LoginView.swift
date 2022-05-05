@@ -20,7 +20,7 @@ struct LoginView: View {
                 Text("登录页")
                 
                 Button("登陆 改变isLogin") {
-                    
+                    vm.need_authenticate = false
                     vm.isLogin = true
                 }
                 
