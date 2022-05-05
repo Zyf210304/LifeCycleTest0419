@@ -8,13 +8,49 @@
 import SwiftUI
 
 struct View3: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
+    
+    @Binding var view3Text:String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            
+            Color.orange.edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 20) {
+                
+                Text("View3")
+                    .foregroundColor(.white)
+                
+                Text("从view2传过来\(view3Text)")
+                
+            }
+            
+            
+            Button {
+                
+                presentationMode.wrappedValue.dismiss()
+//                dismiss()
+                
+            } label: {
+                
+                Image(systemName: "chevron.left")
+                    .font(.title2.bold())
+                    .foregroundColor(.primary)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        Color.red
+                    }
+            }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        }
+        .navigationBarHidden(true)
+        
     }
 }
 
-struct View3_Previews: PreviewProvider {
-    static var previews: some View {
-        View3()
-    }
-}
+

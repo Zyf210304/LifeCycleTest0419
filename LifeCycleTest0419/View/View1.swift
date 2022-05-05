@@ -9,7 +9,33 @@ import SwiftUI
 
 struct View1: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            
+            Color.gray.edgesIgnoringSafeArea(.all)
+            
+            VStack (spacing: 20){
+                
+                Text("View1")
+                    .foregroundColor(.white)
+                
+                
+                NavigationLink {
+                    
+                    View2()
+                    
+                } label: {
+                    
+                    Text("跳转到view2")
+                }
+                
+                
+                
+                
+            }
+        }
+        .navigationTitle("普通跳转")
+        
     }
 }
 
